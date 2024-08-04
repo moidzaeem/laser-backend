@@ -112,7 +112,7 @@
 
                     </div>
                 </div>
-                <div class="card mb-3">
+                <div class="card mb-3 d-none">
                     <div class="card-header">
                         <h5 class="card-title">Working notes / History</h5>
                     </div>
@@ -190,7 +190,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xxl-6 col-sm-6">
+            <div class="col-xxl-6 col-sm-6 d-none">
                 <div class="card mb-3">
                     <div class="card-header">
                         <h5 class="card-title">Center appointments</h5>
@@ -273,7 +273,7 @@
 
         </div>
         <!-- Row ends -->
-        <div class="row gx-3 mt-5">
+        <div class="row gx-3 mt-5 d-none">
             <div class="col-xl-3 col-sm-6 col-12">
                 <div class="card mb-3">
                     <div class="card-header">

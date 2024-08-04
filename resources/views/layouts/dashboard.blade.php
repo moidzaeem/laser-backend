@@ -154,7 +154,7 @@
                         </li>
 
                         <li class="">
-                            <a href="#!">
+                            <a href="{{route('center.customer')}}">
                                 <img src="{{ asset('assets/images/award/6.png') }}" style="width:30px ">
                                 <span class="menu-text new-text">All customers files</span>
                             </a>
