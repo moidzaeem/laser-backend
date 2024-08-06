@@ -11,6 +11,7 @@
 <!-- jQuery Timepicker -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.14.1/jquery.timepicker.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.14.1/jquery.timepicker.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
 
 @section('content')
     <!-- Row starts -->
@@ -230,9 +231,9 @@
 
 
 
-        <div class="col-lg-12 col-sm-12">
+        <div class="col-lg-5 col-sm-12">
 
-            <div class="col-lg-12 col-12">
+            <div class="">
                 <div class="d-flex mt-5">
                     <div class="col-xl-4 col-lg-12">
                         <p>Customer</p>
@@ -357,6 +358,12 @@
             </div>
 
 
+
+
+        </div>
+
+        <div class="col-lg-7">
+            <div id='calendar'></div>
         </div>
 
 
@@ -460,6 +467,22 @@
 
     </div>
 
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            events: {
+                url: "{{route('center.calander.appointments')}}",
+
+            },
+          }
+        );
+          calendar.render();
+        });
+  
+      </script>
     <script>
         //  $(function() {
         //     // Initialize jQuery UI Datepicker

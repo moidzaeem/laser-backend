@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Center;
+use App\Models\Customers;
 use App\Models\Practicioners;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -117,5 +118,20 @@ class CenterController extends Controller
 
         }
 
+    }
+
+    public function getCalanderCenterAppointments(Request $request){
+        $appointments = Customers::whereDate('appointment_datetime', '>=', $request->start)->with('services')->get();
+        $testData = [];
+        foreach ($appointments as $key => $appointment) {
+            $testData[] = array(
+                'title' => $appointment->first_name .' '. $appointment->last_name,
+                'start' => $appointment->appointment_datetime,
+                'id' => $appointment->id,
+                'color'=>$appointment->status === 'created' ? 'blue' : 'completed'
+            );
+        }
+
+        return response()->json($testData);
     }
 }

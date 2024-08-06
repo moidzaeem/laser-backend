@@ -62,3 +62,7 @@ Route::get('/all-stats', [GeneralController::class, 'allStats'])->name('stats.in
 Route::get('center-customers', [CustomersController::class, 'getCenterCustomers'])->name('center.customer');
 
 Route::get('customer-profile/{id}', [CustomersController::class, 'getCustomerProfile'])->name('customer.profile');
+
+
+// calander events
+Route::get('center-calander-appointments', [CenterController::class, 'getCalanderCenterAppointments'])->name('center.calander.appointments');
