@@ -8,6 +8,7 @@ use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\PracticionersController;
 use App\Http\Controllers\PractictionerCenterController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\WebsiteController;
 use App\Models\Practicioners;
 use App\Models\PractictionerCenter;
 use Illuminate\Support\Facades\Route;
@@ -23,9 +24,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/login');
-});
+Route::get('/', [WebsiteController::class, 'index']);
+Route::get('website-center-services/{id}', [WebsiteController::class,'getSelectedCenterServices']);
 
 Auth::routes();
 

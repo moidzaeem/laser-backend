@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+    --prm-color: #21A282;
+    --prm-gray: #b1b1b1;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+}
+
+.btn-success{
+    background-color:  var(--prm-color)
+}
+.header {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    background: linear-gradient(to right, #3fa087, #27685f);
+    color: white;
+    min-height: 30px;        /* Adjust height as needed */
+    text-align: center;      /* Center text horizontally */
+}
+
+.header .icon {
+    margin-left: 8px;
+}
+
+.header p {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.text-center h2 {
+    font-weight: 600;
+}
+
+.text-center p {
+    font-weight: 500;
+}
+
+.text-center h3 {
+    margin: 20px;
+    font-weight: 600;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    border-radius: 50px;
+    box-shadow: 0 4px 48px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border: none;
+}
+
+.custom-card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height:195px;
+    height: 200px;
+    width: 14rem;
+    cursor: pointer;
+}
+
+.custom-card.highlighted {
+    border: 2px solid #21A282;
+}
+
+.custom-card-service.highlighted-service {
+    border: 2px solid #21A282;
+}
+
+
+
+.custom-card-service {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height:195px;
+    height: 240px;
+    width: 14rem;
+}
+
+.custom-card img {
+    margin-top: 10px;
+    width: 50px;
+    height: auto;
+}
+
+.location-select {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* border: 1px solid #007bff; */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.location-icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.location-text {
+    flex-grow: 1;
+    color: #888;
+}
+
+.location-select img {
+    height: 13px;
+}
+
+
+/* CSS */
+.steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.step-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--prm-gray);
+    transition: .4s;
+}
+
+.step-button[aria-expanded="true"] {
+    width: 60px;
+    height: 60px;
+    background-color: var(--prm-color);
+    color: #fff;
+}
+
+.done {
+    background-color: var(--prm-color);
+    color: #fff;
+}
+
+.step-item {
+    z-index: 10;
+    text-align: center;
+}
+
+#progress {
+  -webkit-appearance:none;
+    position: absolute;
+    width: 95%;
+    z-index: 5;
+    height: 10px;
+    margin-left: 18px;
+    margin-bottom: 18px;
+}
+
+/* to customize progress bar */
+#progress::-webkit-progress-value {
+    background-color: var(--prm-color);
+    transition: .5s ease;
+}
+
+#progress::-webkit-progress-bar {
+    background-color: var(--prm-gray);
+
+}
+.rating i {
+    color: gold;
+}
+
+
+.rating i.text-blue {
+    color: blue;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.status-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    color: #28a745;
+    background-color: #f9f9f9;
+}
+
+
+
+
+
+.stepper-5 .container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stepper-5 .summary-card {
+    border: 1px solid #eaeaea;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.stepper-5 .summary-card img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.stepper-5 .summary-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.stepper-5 .total-price {
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.stepper-5 .btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.stepper-5 .btn-back,
+.btn-confirm {
+    width: 100px;
+}
+
+.stepper-5 .reservation-timer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #28a745;
+}
+
+.stepper-5 .reservation-timer img {
+    margin-left: 5px;
+}
+
+.stepper-5 .customer-info img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.stepper-5 .customer-info a {
+    margin-right: 5px;
+}
+
+
+.location-input-group {
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.location-input-group .form-control {
+    border: none;
+    box-shadow: none;
+}
+
+.location-input-group .input-group-text {
+    background-color: white;
+    border: none;
+}
+
+.location-input-group .bi-geo-alt-fill {
+    color: black;
+    font-size: 24px;
+}
+
+.location-input-group .bi-chevron-down {
+    color: grey;
+    font-size: 12px;
+}
+
