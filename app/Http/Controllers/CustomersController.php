@@ -31,7 +31,6 @@ class CustomersController extends Controller
     public function store(Request $request)
     {
 
-        $dateOfBirth = \DateTime::createFromFormat('d-M-Y', $request->dob)->format('Y-m-d');
 
         $data = Customers::create([
             'center_id' => $request->center_id,
@@ -39,7 +38,7 @@ class CustomersController extends Controller
             'last_name' => $request->last_name,
             'email' => $request->email,
             'phone_no' => $request->phone_no,
-            'dob' => $dateOfBirth,
+            'dob' => $request->dob,
             'gender' => $request->gender,
             'service_id' => $request->service_id,
             'appointment_datetime' => $request->appointment_datetime
