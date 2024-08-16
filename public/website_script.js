@@ -1,5 +1,41 @@
 var bookingObject = {};
 document.addEventListener('DOMContentLoaded', function () {
+
+    $('.btn-confirm').on('click', function () {
+        // Define the URL for your POST request
+        var url = '/api/customer'; // Replace with your actual URL
+
+        // Define the data you want to send
+        var data = {
+            center_id: bookingObject.center.id, // Replace with your actual data
+            first_name: bookingObject.user.firstName,
+            last_name:bookingObject.user.lastName,
+            email:bookingObject.user.email,
+            phone_no:bookingObject.user.phoneNo,
+            dob:bookingObject.user.dob,
+            service_id:bookingObject.serviceId,
+            appointment_datetime:bookingObject.datetime
+        };
+
+        // Perform the AJAX POST request
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            success: function (response) {
+                // Handle a successful response here
+                console.log('Success:', response);
+                window.location.href ='/confirmation'
+            },
+            error: function (xhr) {
+                // Handle an error response here
+                console.error('Error:', xhr.responseText);
+            },
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include the CSRF token
+            }
+        });
+    });
     const stepButtons = document.querySelectorAll('.step-button');
     const progress = document.querySelector('#progress');
     const nextButtons = document.querySelectorAll('.next-step-button'); // Assuming 'Next' button has this class
@@ -44,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (currentIndex < stepButtons.length - 1) {
                 currentIndex++;
                 updateStep(currentIndex);
+                bookingObject.datetime = $('#time-slot-input').val()
                 console.log(bookingObject);
-                console.log($('#time-slot-input').val());
             }
         });
     });
@@ -79,6 +115,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    $('.valid-profile').on('click', function () {
+        bookingObject.user = {
+            email: $('#email').val(),
+            firstName: $('#firstName').val(),
+            dob: $('#dob').val(),
+            phoneNo: $('#phoneNo').val()
+        }
+
+        $('#customerName').text(bookingObject.user.firstName)
+        $('#customerPhone').text(bookingObject.user.phoneNo);
+        $('#customerEmail').text(bookingObject.user.email);
+    });
+
     const cards = document.querySelectorAll('.custom-card');
 
     cards.forEach(card => {

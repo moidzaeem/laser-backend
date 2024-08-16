@@ -296,3 +296,29 @@ body {
     font-size: 12px;
 }
 
+@media screen and (max-width: 992px) {
+    body {
+      .step-title{
+        font-size: 10px;
+      }
+      .step-button{
+        width: 30px;
+        height: 30px;
+      }
+      .step-button[aria-expanded="true"] {
+        width: 35px;
+        height: 35px;
+           }
+        }
+    }
+@media screen and (max-width: 524px) {
+    body {
+      .step-title{
+        font-size: 6px;
+      }
+      .step-button{
+        width: 35px;
+        height: 35px;
+      }
+        }
+    }

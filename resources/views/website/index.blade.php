@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booking Assistant</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('website/style.css') }}">
@@ -296,24 +297,25 @@
                     <div class="status-message d-none">
                         Your customer file has been found, you can validate
                     </div>
-                   
+
 
                     <h4 class="text-center mt-3">Additional Detail</h4>
                     <div class="row">
-                    <div class="col-lg-6">
-                        <label for="last_name" class="form-label">Last name</label>
-                        <input type="last_name" class="form-control" id="last_name" placeholder="">
+                        <div class="col-lg-6">
+                            <label for="lastName" class="form-label">Last name</label>
+                            <input type="last_name" class="form-control" id="lastName" placeholder="">
 
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="phoneNo" class="form-label">Phone No</label>
+                            <input type="text" class="form-control" id="phoneNo" placeholder="">
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <label for="phone_no" class="form-label">Phone No</label>
-                        <input type="text" class="form-control" id="phone_no" placeholder="">
-                    </div>
-                </div>
 
                     <div class="text-center mt-4">
                         <button type="button" class="btn btn-light  disabled ">Cancel</button>
-                        <button type="button" class="btn btn-success    btn-lg next-step-button">valid</button>
+                        <button type="button"
+                            class="btn btn-success btn-lg next-step-button valid-profile">valid</button>
                     </div>
 
                 </div>
@@ -345,16 +347,17 @@
                                         <h6>Center Information</h6>
                                         <div class="d-flex">
                                             <img src="./icons/loc.svg" alt="">
-                                            <p class="center-name-final">LaserAddict Grenoble<br>1 Rue des Pins<br>38000, Grenoble
+                                            <p class="center-name-final">LaserAddict Grenoble<br>1 Rue des
+                                                Pins<br>38000, Grenoble
                                             </p>
                                         </div>
                                         <hr>
                                         <h6>Your Customer Information</h6>
                                         <div class="customer-info">
-                                            <div class="mb-2"><img src="./icons/profile.svg" /> Mme Loren Doos</div>
-                                            <div class="mb-2"><img src="./icons/phone.svg" /> +33 6 XX XX XX XX
+                                            <div class="mb-2"><img src="./icons/profile.svg" /><span id="customerName"> Mme Loren Doos</span></div>
+                                            <div class="mb-2"><img src="./icons/phone.svg" /> <span id="customerPhone">+33 6 XX XX XX XX</span> 
                                             </div>
-                                            <div class="mb-2"><img src="./icons//msg.svg" /> loremipsum@gmail.com
+                                            <div class="mb-2"><img src="./icons//msg.svg" /> <span id="customerEmail">loremipsum@gmail.com</span> 
                                             </div>
                                         </div>
                                         <!-- <div class="mt-2">

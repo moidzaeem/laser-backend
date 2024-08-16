@@ -66,3 +66,5 @@ Route::get('customer-profile/{id}', [CustomersController::class, 'getCustomerPro
 
 // calander events
 Route::get('center-calander-appointments', [CenterController::class, 'getCalanderCenterAppointments'])->name('center.calander.appointments');
+
+Route::view('/confirmation', 'confirmation');
