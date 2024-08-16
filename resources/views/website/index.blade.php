@@ -288,7 +288,7 @@
 
                         <div class="col-lg-6">
                             <label for="dob" class="form-label">Date of Birth</label>
-                            <input type="text" class="form-control" id="dob" placeholder="12/03/2001">
+                            <input type="date" class="form-control" id="dob" placeholder="12/03/2001">
                             {{-- <div class="form-text">* Check for existing file...</div> --}}
                         </div>
 
