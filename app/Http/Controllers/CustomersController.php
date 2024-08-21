@@ -6,7 +6,8 @@ use App\Models\Customers;
 use App\Models\Practicioners;
 use App\Models\PractictionerCenter;
 use Illuminate\Http\Request;
-
+use App\Mail\BookingConfirmation;
+use Illuminate\Support\Facades\Mail;
 class CustomersController extends Controller
 {
     /**
@@ -43,6 +44,17 @@ class CustomersController extends Controller
             'service_id' => $request->service_id,
             'appointment_datetime' => $request->appointment_datetime
         ]);
+
+        try {
+            //code...
+
+
+
+            Mail::to($data->email)->send(new BookingConfirmation($data));
+
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
 
         return response()->json([
             'status' => true,
@@ -103,7 +115,8 @@ class CustomersController extends Controller
 
     }
 
-    public function getCustomerProfile($id){
+    public function getCustomerProfile($id)
+    {
         $customer = Customers::with('services')->findOrFail($id);
         // dd($customer);
         return view('customers.profile', compact('customer'));
