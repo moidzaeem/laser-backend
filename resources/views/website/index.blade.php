@@ -14,7 +14,8 @@
 <body>
 
     <div class="header">
-        <p> Make an appointment for a session <span class="icon">👇</span></p>
+        <p> {{__('Make an appointment for a session')}} <span class="icon">👇</span></p>
+        @include('partials/language_switcher')
     </div>
 
 
@@ -23,11 +24,13 @@
         <div class="logo">
             <img src="{{ asset('icons/logo.svg') }}" alt="LaserAddict Logo" class="img-fluid mb-3" />
         </div>
+       
         <div class="text-center">
-            <h2>Make an appointment for a</h2>
-            <h2>session by booking online</h2>
-            <p class="text-muted">Let the wizard guide you</p>
+            <h2>{{__('Make an appointment for a session')}}</h2>
+            <h2>{{__('by booking online')}}</h2>
+            <p class="text-muted">{{__('Let the wizard guide you')}}</p>
         </div>
+        
 
         <!-- Progress Bar -->
         <div class="container">
@@ -40,7 +43,7 @@
                             1
                         </button>
                         <div class="step-title">
-                            Choose a center
+                            {{__('Choose a center')}}
                         </div>
                     </div>
                     <div class="step-item">
@@ -49,7 +52,7 @@
                             2
                         </button>
                         <div class="step-title">
-                            Choose a service
+                            {{__('Choose a service')}}
                         </div>
                     </div>
                     <div class="step-item">
@@ -58,7 +61,7 @@
                             3
                         </button>
                         <div class="step-title">
-                            Choose a time slot
+                           {{__('Choose a time slot')}}
                         </div>
                     </div>
                     <div class="step-item">
@@ -67,7 +70,7 @@
                             4
                         </button>
                         <div class="step-title">
-                            Enter Customer Information
+                            {{__('Enter Customer Information')}}
                         </div>
                     </div>
                     <div class="step-item">
@@ -76,7 +79,7 @@
                             5
                         </button>
                         <div class="step-title">
-                            Confirmation
+                            {{__('Confirmation')}}
                         </div>
                     </div>
                 </div>
@@ -90,12 +93,12 @@
 
 
                         <div class="text-center mt-5">
-                            <h3>Choosing a LaserAddict center</h3>
+                            <h3>{{__('Choosing a LaserAddict center')}}</h3>
                         </div>
 
                         <div class="input-group location-input-group">
                             <span class="input-group-text"><i class="bi bi-geo-alt-fill"></i></span>
-                            <input type="text" class="form-control" placeholder="Locate me to see nearest">
+                            <input type="text" class="form-control" placeholder="{{__('Locate me to see nearest')}}">
                             <span class="input-group-text"><i class="bi bi-chevron-down"></i></span>
                         </div>
                     </div>
@@ -128,14 +131,14 @@
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-google"></i>
                                     <i class="bi bi-facebook text-blue"></i>
-                                    <span class="ms-2 font-weight-bold bold" style="font-weight: bold;">A method
-                                        approved by over 3,000 customers across France</span>
+                                    <span class="ms-2 font-weight-bold bold" style="font-weight: bold;">
+                                        {{__('A method approved by over 3,000 customers across France')}}</span>
                                 </div>
 
                                 <div class="text-center mt-4">
-                                    <button type="button" class="btn btn-light col-2 disabled">Cancel</button>
+                                    <button type="button" class="btn btn-light disabled">{{__('Cancel')}}</button>
                                     <button type="button"
-                                        class="btn btn-success col-2 btn-lg next-step-button">Next</button>
+                                        class="btn btn-success  btn-lg next-step-button">{{_('Next')}}</button>
                                 </div>
                             </div>
                         </div>
@@ -232,8 +235,8 @@
 
                     </div>
                     <div class="text-center mt-4">
-                        <button type="button" class="btn btn-light col-2 disabled ">Cancel</button>
-                        <button type="button" class="btn btn-success col-2   btn-lg next-step-button">Next</button>
+                        <button type="button" class="btn btn-light  disabled ">Cancel</button>
+                        <button type="button" class="btn btn-success btn-lg next-step-button">Next</button>
                     </div>
                 </div>
 
@@ -247,8 +250,8 @@
                     <div id="time-slot-picker"></div>
 
                     <div class="text-center mt-4">
-                        <button type="button" class="btn btn-light col-2 disabled ">Cancel</button>
-                        <button type="button" class="btn btn-success col-2   btn-lg next-step-button">Next</button>
+                        <button type="button" class="btn btn-light  disabled ">Cancel</button>
+                        <button type="button" class="btn btn-success  btn-lg next-step-button">Next</button>
                     </div>
 
                 </div>
