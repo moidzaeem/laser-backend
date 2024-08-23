@@ -70,7 +70,7 @@ class CenterController extends Controller
         if ($center && $center->practictionerCenter) {
             $pracIds = explode(',', $center->practictionerCenter->practicioners_ids);
             $practictonerCenter = Practicioners::whereIn('id', $pracIds)->get()->toArray();
-        $center['practictioners'] = $practictonerCenter;
+            $center['practictioners'] = $practictonerCenter;
 
         }
         $center['services'] = $centerServices;
@@ -111,8 +111,8 @@ class CenterController extends Controller
         try {
             $centers = Center::all();
             return response()->json([
-                'success'=>true,
-                'data'=>$centers
+                'success' => true,
+                'data' => $centers
             ]);
         } catch (\Exception $exception) {
 
@@ -120,17 +120,37 @@ class CenterController extends Controller
 
     }
 
-    public function getCalanderCenterAppointments(Request $request){
-        $appointments = Customers::whereDate('appointment_datetime', '>=', $request->start)->with('services')->get();
+    public function getCalanderCenterAppointments(Request $request)
+    {
+        $appointments = Customers::whereDate('appointment_datetime', '>=', $request->start)->get();
         $testData = [];
-        foreach ($appointments as $key => $appointment) {
-            $testData[] = array(
-                'title' => $appointment->first_name .' '. $appointment->last_name,
-                'start' => $appointment->appointment_datetime,
+        foreach ($appointments as $appointment) {
+            // Parse appointment_datetime to a Carbon instance
+            $startTime = \Carbon\Carbon::parse($appointment->appointment_datetime);
+            
+            // Calculate end_time by adding 60 minutes to the start_time
+            $endTime = $startTime->copy()->addMinutes(60);
+    
+            // Format the times as desired (24-hour format)
+            $formattedStartTime = $startTime->format('H:i');
+            $formattedEndTime = $endTime->format('H:i');
+
+            $service = Service::find($appointment->service_id);
+            $serviceLogo = asset($service->logo);
+            // Build the event data array
+            $testData[] = [
+                'title' => '<div class="title">' . $appointment->first_name . ' ' . $appointment->last_name . '</div>' .
+                    '<div class="deets"><span class="time">' . $formattedStartTime . ' - ' . $formattedEndTime . '</span>' .
+                    '<span class="location"><img width="20" height="20" src='.$serviceLogo.'>' .$service->name . '</span></div>',
+                'start' => $startTime->toIso8601String(), // Format start time in ISO 8601 format
+                'end' => $endTime->toIso8601String(), // Format end time in ISO 8601 format
                 'id' => $appointment->id,
-                'color'=>$appointment->status === 'created' ? 'blue' : 'completed'
-            );
+                'color' => $appointment->status === 'created' ? 'blue' : 'completed',
+            ];
         }
+
+
+
 
         return response()->json($testData);
     }

@@ -230,6 +230,10 @@
         </div>
 
 
+        <div class="col-lg-12">
+            <div id='calendar'></div>
+        </div>
+
 
         <div class="col-lg-5 col-sm-12">
 
@@ -362,9 +366,6 @@
 
         </div>
 
-        <div class="col-lg-7">
-            <div id='calendar'></div>
-        </div>
 
 
         <!-- Modal -->
@@ -468,21 +469,28 @@
     </div>
 
     <script>
-
         document.addEventListener('DOMContentLoaded', function() {
-          var calendarEl = document.getElementById('calendar');
-          var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            events: {
-                url: "{{route('center.calander.appointments')}}",
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'listWeek',
+                events: {
+                    url: "{{ route('center.calander.appointments') }}",
 
-            },
-          }
-        );
-          calendar.render();
+                },
+
+                eventDidMount: function(info) {
+                    console.log(info);
+                    // This is required to parse the HTML.
+                    const title = $(info.el).find('.fc-list-event-title');
+                    console.log('title  ', title);
+                    title.html(title.text());
+                },
+
+
+            });
+            calendar.render();
         });
-  
-      </script>
+    </script>
     <script>
         //  $(function() {
         //     // Initialize jQuery UI Datepicker
@@ -563,7 +571,7 @@
                     $('#selectedPractitionersList').append(selectedPractitioners.join(''));
                     $('#practitionerSelect').val([]);
                     $('#practitionerIds').val(practitionerIds.join(
-                    ',')); // Set hidden input with comma-separated IDs
+                        ',')); // Set hidden input with comma-separated IDs
                 } else {
                     alert('Please select at least one practitioner.');
                 }
