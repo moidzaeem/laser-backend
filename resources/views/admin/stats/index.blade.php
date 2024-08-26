@@ -17,8 +17,8 @@
                         <div class="col-xl-5 col-lg-12">
                             <div class="mb-3">
                                 <div class="card-header">
-                                    <h5 class="card-title">Statistics</h5>
-                                    <p>Below you will find the center's statistics for the selected center:</p>
+                                    <h5 class="card-title">{{('Statistics')}}</h5>
+                                    <p>{{__('Below you will find the center\'s statistics for the selected center')}}:</p>
                                     <h4 class="text-left text-muted">{{$centers->center_name}}</h4>
                                 </div>
                             </div>
@@ -27,7 +27,7 @@
                         @if(Auth::user()->user_type ==0)
 
                             <div class="m-0">
-                                <label class="form-label" for="abc4">Choose center</label>
+                                <label class="form-label" for="abc4">{{__('Choose center')}}</label>
                                 <select class="form-select" id="abc4" aria-label="Default select example"
                                     onchange="redirectToCenter()">
                                     <option value="" selected disabled>--Please--select</option>
@@ -54,7 +54,7 @@
                             <div class="border rounded-2 d-flex align-items-center flex-row p-4 bag">
 
                                 <div class="m-0">
-                                    <small>Year Selected</small>
+                                    <small>{{__('Year Selected')}}</small>
                                     <div class="d-flex align-items-center d-flex">
                                         <p class="m-0 fw-bold">Over all
                                             <span>2024</span>
@@ -71,7 +71,7 @@
                             <div class="border rounded-2 d-flex align-items-center flex-row p-4 ">
 
                                 <div class="m-0">
-                                    <small>Monthly sales</small>
+                                    <small>{{__('Monthly sales')}}</small>
                                     <div class="d-flex align-items-center d-flex">
                                         <h4 class="m-0 fw-bold">{{ $statsData['totalPrice'] }} €</h4>
                                         <div>
@@ -86,7 +86,7 @@
                             <div class="border rounded-2 d-flex align-items-center flex-row p-4 ">
 
                                 <div class="m-0">
-                                    <small>Appointments</small>
+                                    <small>{{__('Appointments')}}</small>
                                     <div class="d-flex align-items-center d-flex">
                                         <h4 class="m-0 fw-bold">{{ $statsData['appointmentCounts'] }}</h4>
                                         <div>
@@ -101,7 +101,7 @@
                             <div class="border rounded-2 d-flex align-items-center flex-row p-4 ">
 
                                 <div class="m-0">
-                                    <small>Customers</small>
+                                    <small>{{__('Customers')}}</small>
                                     <div class="d-flex align-items-center d-flex">
                                         <h4 class="m-0 fw-bold">{{ $statsData['customersCount'] }}</h4>
                                         <div>
@@ -129,7 +129,7 @@
                         <div class="col-xl-5 col-lg-12">
                             <div class="card mb-3">
                                 <div class="card-header">
-                                    <h5 class="card-title">Revenues by service</h5>
+                                    <h5 class="card-title">{{__('Revenues by service')}}</h5>
                                     {{-- <p>From 1-31 March, 2022</p> --}}
                                 </div>
                                 <div class="card-body">
@@ -142,7 +142,7 @@
                         <div class="col-xl-5 col-lg-12">
                             <div class="card mb-3">
                                 <div class="card-header">
-                                    <h5 class="card-title">Revenues by Centers</h5>
+                                    <h5 class="card-title">{{__('Revenues by Centers')}}</h5>
                                     {{-- <p>From 1-31 March, 2022</p> --}}
                                 </div>
                                 <div class="card-body">

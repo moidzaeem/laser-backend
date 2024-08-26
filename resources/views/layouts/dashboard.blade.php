@@ -141,7 +141,7 @@
                                         <a href="patients-list.html">Billing</a>
                                     </li> --}}
                                     <li>
-                                        <a href="{{ route('center.services.index') }}">Services</a>
+                                        <a href="{{ route('center.services.index') }}">{{__("Services")}}</a>
                                     </li>
                                 </ul>
                             </li>
@@ -150,31 +150,31 @@
                         <br>
                         @if (Auth::user()->user_type == 0)
                         <li class="pation">
-                            <span class="menu-text">Admin Menu</span>
+                            <span class="menu-text">{{__('Admin Menu')}}</span>
                         </li>
 
                         <li class="">
                             <a href="{{route('center.customer')}}">
                                 <img src="{{ asset('assets/images/award/6.png') }}" style="width:30px ">
-                                <span class="menu-text new-text">All customers files</span>
+                                <span class="menu-text new-text">{{__('All customers files')}}</span>
                             </a>
                         </li>
                         <li class="">
                             <a href="{{ route('center.index') }}">
                                 <img src="{{ asset('assets/images/award/5.png') }}" style="width:30px ">
-                                <span class="menu-text new-text">All centers</span>
+                                <span class="menu-text new-text">{{__('All centers')}}</span>
                             </a>
                         </li>
                         <li class="">
                             <a href="{{ route('practicioners.index') }}">
                                 <img src="{{ asset('assets/images/award/7.png') }}" style="width:30px ">
-                                <span class="menu-text new-text">Practicioners</span>
+                                <span class="menu-text new-text">{{__('Practicioners')}}</span>
                             </a>
                         </li>
                         <li class="">
                             <a href="{{ route('stats.index') }}">
                                 <img src="{{ asset('assets/images/award/8.png') }}" style="width:30px ">
-                                <span class="menu-text new-text">All Statistics</span>
+                                <span class="menu-text new-text">{{__('All Statistics')}}</span>
                             </a>
                         </li>
                         {{-- <li class="">
@@ -187,7 +187,7 @@
                         <li class="">
                             <a href="{{ route('services.index.all') }}">
                                 <img src="{{ asset('assets/images/award/9.png') }}" style="width:30px ">
-                                <span class="menu-text new-text">Services</span>
+                                <span class="menu-text new-text">{{__('Services')}}</span>
                             </a>
                         </li>
                         @endif
@@ -202,7 +202,7 @@
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
                                 <img src="{{ asset('assets/images/award/11.png') }}" style="width:30px ">
-                                <span class="menu-text new-text">Logout</span>
+                                <span class="menu-text new-text">{{__('Logout')}}</span>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                     class="d-none">
                                     @csrf
@@ -235,37 +235,7 @@
                         <div class="d-lg-flex d-none gap-2">
 
                             <!-- Select country dropdown starts -->
-                            <div class="dropdown">
-                                <a class="dropdown-toggle header-icon" href="#!" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="{{ asset('assets/images/flags/1x1/fr.svg') }}"
-                                        class="header-country-flag" alt="Bootstrap Dashboards">
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end dropdown-mini">
-                                    <div class="country-container">
-                                        <a href="index.html" class="py-2">
-                                            <img src="{{ asset('assets/images/flags/1x1/us.svg') }}"
-                                                alt="Admin Panel">
-                                        </a>
-                                        <a href="index.html" class="py-2">
-                                            <img src="{{ asset('assets/images/flags/1x1/in.svg') }}"
-                                                alt="Admin Panels">
-                                        </a>
-                                        <a href="index.html" class="py-2">
-                                            <img src="{{ asset('assets/images/flags/1x1/br.svg') }}"
-                                                alt="Admin Dashboards">
-                                        </a>
-                                        <a href="index.html" class="py-2">
-                                            <img src="{{ asset('assets/images/flags/1x1/tr.svg') }}"
-                                                alt="Admin Templatess">
-                                        </a>
-                                        <a href="index.html" class="py-2">
-                                            <img src="{{ asset('assets/images/flags/1x1/gb.svg') }}"
-                                                alt="Google Admin">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                            @include('partials/language_switcher')
                             <!-- Select country dropdown ends -->
 
 
@@ -277,7 +247,7 @@
                                     <span class="count-label success"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-300">
-                                    <h5 class="fw-semibold px-3 py-2 text-primary">Alerts</h5>
+                                    <h5 class="fw-semibold px-3 py-2 text-primary">{{__("Alerts")}}</h5>
 
                                     <!-- Scroll starts -->
                                     <div class="scroll300">

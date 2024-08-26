@@ -14,7 +14,7 @@
 <body>
 
     <div class="header">
-        <p> Make an appointment for a session <span class="icon">👇</span></p>
+        <p> {{__('Make an appointment for a session')}} <span class="icon">👇</span></p>
     </div>
 
 

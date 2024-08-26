@@ -138,7 +138,7 @@
                                 <div class="text-center mt-4">
                                     <button type="button" class="btn btn-light disabled">{{__('Cancel')}}</button>
                                     <button type="button"
-                                        class="btn btn-success  btn-lg next-step-button">{{_('Next')}}</button>
+                                        class="btn btn-success  btn-lg next-step-button">{{__('Next')}}</button>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +175,7 @@
                         </style>
 
                         <span class="text-center mt-5">
-                            <h3>Choose your Laser session </h3>
+                            <h3>{{__('Choose your Laser session')}} </h3>
                         </span>
 
                         <!-- box-location -->
@@ -203,29 +203,29 @@
                                     <div class="col-md-3 col-sm-6 mb-3">
                                         <div class="feature-box">
                                             <i class="bi bi-people"></i>
-                                            <h6>1-year warranty</h6>
-                                            <p>Tobacco sessions are guaranteed for one year</p>
+                                            <h6>{{__('1-year warranty')}}</h6>
+                                            <p>{{__('Tobacco sessions are guaranteed for one year')}}</p>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-6 mb-3">
                                         <div class="feature-box">
                                             <i class="bi bi-people"></i>
-                                            <h6>A unique method</h6>
-                                            <p>The LaserAddict Method is unique in France</p>
+                                            <h6>{{__('A unique method')}}</h6>
+                                            <p>{{__('The LaserAddict Method is unique in France')}}</p>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-6 mb-3">
                                         <div class="feature-box">
                                             <i class="bi bi-people"></i>
-                                            <h6>Support</h6>
-                                            <p>We take care of you by accompanying you</p>
+                                            <h6>{{__('Support')}}</h6>
+                                            <p>{{__('We take care of you by accompanying you')}}</p>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-6 mb-3">
                                         <div class="feature-box">
                                             <i class="bi bi-people"></i>
-                                            <h6>A high success rate</h6>
-                                            <p>A customer satisfaction rate close to 90%</p>
+                                            <h6>{{__('A high success rate')}}</h6>
+                                            <p>{{__('A customer satisfaction rate close to 90%')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -235,8 +235,8 @@
 
                     </div>
                     <div class="text-center mt-4">
-                        <button type="button" class="btn btn-light  disabled ">Cancel</button>
-                        <button type="button" class="btn btn-success btn-lg next-step-button">Next</button>
+                        <button type="button" class="btn btn-light  disabled ">{{__('Cancel')}}</button>
+                        <button type="button" class="btn btn-success btn-lg next-step-button">{{__('Next')}}</button>
                     </div>
                 </div>
 
@@ -250,8 +250,8 @@
                     <div id="time-slot-picker"></div>
 
                     <div class="text-center mt-4">
-                        <button type="button" class="btn btn-light  disabled ">Cancel</button>
-                        <button type="button" class="btn btn-success  btn-lg next-step-button">Next</button>
+                        <button type="button" class="btn btn-light  disabled ">{{__('Cancel')}}</button>
+                        <button type="button" class="btn btn-success  btn-lg next-step-button">{{__('Next')}}</button>
                     </div>
 
                 </div>
@@ -262,35 +262,26 @@
                     data-bs-parent="#accordionExample">
 
                     <span class="text-center mt-5">
-                        <h3>Please enter your customer details</h3>
-                        <h3>to attach the session to your file.</h3>
+                        <h3>{{__('Please enter your customer details to attach the session to your file')}}</h3>
                     </span>
                     <div class="text-center">
-                        <p>please enter your e-mail address, your first name and your date of birth. If you are
-                            already to laserAddict </p>
+                        <p>{{__('Please enter your e-mail address, your first name and your date of birth. If you are already to laserAddict customer, the system will recognize you and this appointment will be attached to your customer file. If you have never been a LaserAddict customer, please fill in the additional fields If requested.')}} </p>
                     </div>
-                    <div class="text-center">
-                        <p>customer, the system will recognize you and this appointment will be attached to your
-                            customer file. </p>
-                    </div>
-                    <div class="text-center">
-                        <p>If you have never been a LaserAddict customer, please fill in the additional feilds
-                            If requested. </p>
-                    </div>
+                   
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <label for="email" class="form-label">Your Email</label>
+                            <label for="email" class="form-label">{{__('Your Email')}}</label>
                             <input type="email" class="form-control" id="email" placeholder="">
 
                         </div>
                         <div class="col-lg-6">
-                            <label for="firstName" class="form-label">First Name</label>
+                            <label for="firstName" class="form-label">{{__('First Name')}}</label>
                             <input type="text" class="form-control" id="firstName" placeholder="">
                         </div>
 
                         <div class="col-lg-6">
-                            <label for="dob" class="form-label">Date of Birth</label>
+                            <label for="dob" class="form-label">{{__('Date of Birth')}}</label>
                             <input type="date" class="form-control" id="dob" placeholder="12/03/2001">
                             {{-- <div class="form-text">* Check for existing file...</div> --}}
                         </div>
@@ -302,23 +293,23 @@
                     </div>
 
 
-                    <h4 class="text-center mt-3">Additional Detail</h4>
+                    <h4 class="text-center mt-3">{{__('Additional Detail')}}</h4>
                     <div class="row">
                         <div class="col-lg-6">
-                            <label for="lastName" class="form-label">Last name</label>
+                            <label for="lastName" class="form-label">{{__('Last name')}}</label>
                             <input type="last_name" class="form-control" id="lastName" placeholder="">
 
                         </div>
                         <div class="col-lg-6">
-                            <label for="phoneNo" class="form-label">Phone No</label>
+                            <label for="phoneNo" class="form-label">{{__('Phone No')}}</label>
                             <input type="text" class="form-control" id="phoneNo" placeholder="">
                         </div>
                     </div>
 
                     <div class="text-center mt-4">
-                        <button type="button" class="btn btn-light  disabled ">Cancel</button>
+                        <button type="button" class="btn btn-light  disabled ">{{__('Cancel')}}</button>
                         <button type="button"
-                            class="btn btn-success btn-lg next-step-button valid-profile">valid</button>
+                            class="btn btn-success btn-lg next-step-button valid-profile">{{__('Valid')}}</button>
                     </div>
 
                 </div>
@@ -328,26 +319,16 @@
                 <div id="collapseFifth" class="collapse" aria-labelledby="headingFifth"
                     data-bs-parent="#accordionExample">
                     <div class="card-body">
-                        <style>
-
-                        </style>
-                        <!-- html -->
+                       
                         <div class="stepper-5">
                             <div class="container">
                                 <p class="text-center fs-5 fw-bold">
-                                    Does everything look OK? Here is a summary of
-                                </p>
-                                <p class="text-center fs-5 fw-bold">
-                                    your appointment, which will be
-                                    confirmed when
-                                </p>
-                                <p class="text-center fs-5 fw-bold">
-                                    you click on "Confirm".
+                                   {{__(' Does everything look OK? Here is a summary of your appointment, which will be confirmed when you click on Confirm.')}}
                                 </p>
                                 <div class="row mt-4">
                                     <!-- Center and Customer Information -->
                                     <div class="col-md-6">
-                                        <h6>Center Information</h6>
+                                        <h6>{{__('Center Information')}}</h6>
                                         <div class="d-flex">
                                             <img src="./icons/loc.svg" alt="">
                                             <p class="center-name-final">LaserAddict Grenoble<br>1 Rue des
@@ -355,7 +336,7 @@
                                             </p>
                                         </div>
                                         <hr>
-                                        <h6>Your Customer Information</h6>
+                                        <h6>{{__('Your Customer Information')}}</h6>
                                         <div class="customer-info">
                                             <div class="mb-2"><img src="./icons/profile.svg" /><span id="customerName"> Mme Loren Doos</span></div>
                                             <div class="mb-2"><img src="./icons/phone.svg" /> <span id="customerPhone">+33 6 XX XX XX XX</span> 
@@ -366,7 +347,7 @@
                                         <!-- <div class="mt-2">
                                                 <img src="./icons/fb.svg" alt="">
                                             </div> -->
-                                        <p class="mt-2">Over 1000+ clients have recovered their habits successfully.
+                                        <p class="mt-2">{{__('Over 1000+ clients have recovered their habits successfully.')}}
                                         </p>
                                     </div>
 
@@ -379,14 +360,14 @@
                                             <div class="summary-item">
                                                 <img src="./icons/doctor.svg" />
                                                 <div>
-                                                    <p class="mb-0">Practitioner</p>
+                                                    <p class="mb-0">{{__('Practitioner')}}</p>
                                                     <small>TBD</small>
                                                 </div>
                                             </div>
                                             <div class="summary-item">
                                                 <img src="./icons//calender.svg" />
                                                 <div>
-                                                    <p class="mb-0">Date</p>
+                                                    <p class="mb-0">{{__('Date')}}</p>
                                                     <small class="date-final">Wednesday, 17 April 2024</small>
                                                 </div>
                                             </div>
@@ -400,7 +381,7 @@
                                             <div class="summary-item">
                                                 <img src="./icons/stop.svg" />
                                                 <div>
-                                                    <p class="mb-0">Laser Session</p>
+                                                    <p class="mb-0">{{__('Laser Session')}}</p>
                                                     <h6 class="service-final">Stop Candbio</h6>
                                                     <p class="duration-final">Duration: 1 hour</p>
                                                 </div>
@@ -413,9 +394,9 @@
                                             </div>
                                             <div class="btn-container">
                                                 <button type="button"
-                                                    class="btn btn-success btn-confirm">Confirm</button>
+                                                    class="btn btn-success btn-confirm">{{__('Confirm')}}</button>
                                                 <button type="button"
-                                                    class="btn btn-secondary btn-back">Back</button>
+                                                    class="btn btn-secondary btn-back">{{__('Back')}}</button>
                                             </div>
                                         </div>
                                     </div>

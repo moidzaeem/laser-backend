@@ -472,6 +472,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
+                headerToolbar: { right: 'dayGridMonth,timeGridWeek',
+                center: 'today prev,next' 
+                 }, // buttons for switching between views
+
                 initialView: 'listWeek',
                 events: {
                     url: "{{ route('center.calander.appointments') }}",
@@ -482,8 +486,10 @@
                     console.log(info);
                     // This is required to parse the HTML.
                     const title = $(info.el).find('.fc-list-event-title');
-                    console.log('title  ', title);
                     title.html(title.text());
+
+                    const titleView = $(info.el).find('.fc-event-title');
+                    titleView.html(titleView.text());
                 },
 
 

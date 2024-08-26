@@ -8,10 +8,10 @@
         <div class="col-xl-7">
             <div class="card-body">
                 <div class="py-4 px-3 ">
-                    <h2>Hello {{ auth()->user()->name }},</h2>
-                    <h2>Welcome to the CRM</h2>
-                    <h5>Your schedule today.</h5>
-                    <p>The dashboard contains an overview of your center and the selected period.</p>
+                    <h2>{{__('Hello')}} {{ auth()->user()->name }},</h2>
+                    <h2>{{__('Welcome to the CRM')}}</h2>
+                    <h5>{{__('Your schedule today.')}}</h5>
+                    <p>{{__('The dashboard contains an overview of your center and the selected period.')}}</p>
 
                 </div>
             </div>
@@ -57,7 +57,7 @@
                     <img src="{{asset('assets/icons/calander.png')}}" alt="" style="width: 42px">
                 </div>
                 <div class="card-body">
-                    <p>Appointments of the Day</p>
+                    <p>{{__('Appointments of the Day')}}</p>
 
                     <h4>
                        {{$appointments['completed_count']}} / {{$appointments['total_count']}}</h4>
@@ -71,7 +71,7 @@
                     <img src="{{asset('assets/icons/calander.png')}}" alt="" style="width: 42px">
                 </div>
                 <div class="card-body">
-                    <p>Practitioners available</p>
+                    <p>{{__('Practitioners available')}}</p>
 
                     <h4>
                         {{$pracCount}}</h4>
@@ -109,7 +109,7 @@
         <div class="col-xxl-6 col-sm-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    <h5 class="card-title">Services available at my center</h5>
+                    <h5 class="card-title">{{__('Services available at my center')}}</h5>
                 </div>
                 <div class="card-body">
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appointment Confirmation</title>
+    <title>{{__('Appointment Confirmation')}}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .header {
@@ -79,9 +79,9 @@
     </div>
 
     <div class="confirmation-container">
-        <h3>Appointment confirmed</h3>
-        <p>Thank you for making an appointment with your LaserAddict center. Your appointment is now confirmed.</p>
-        <p>You will receive an e-mail with the details of your appointment and a link to modify or cancel it.</p>
+        <h3>{{__('Appointment confirmed')}}</h3>
+        <p>{{__('Thank you for making an appointment with your LaserAddict center. Your appointment is now confirmed.')}}</p>
+        <p>{{__('You will receive an e-mail with the details of your appointment and a link to modify or cancel it.')}}</p>
         <div class="icon">
             <img src="./icons/done.svg" alt="Confirmed">
         </div>
